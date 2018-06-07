@@ -1,6 +1,6 @@
 package com.murphy.appdownload.entity;
 
-public class DowntimeCaptureDo {
+public class DowntimeCaptureDo implements BaseDo {
 
 	private int merrickId;
 	private int objectType;
@@ -321,6 +321,11 @@ public class DowntimeCaptureDo {
 				+ ", lastTransmission=" + lastTransmission + ", lastLoadDate=" + lastLoadDate + ", lastLoadTime=" + lastLoadTime + ", transmitFlag="
 				+ transmitFlag + ", dateTimeStamp=" + dateTimeStamp + ", bLogicDateStamp=" + bLogicDateStamp + ", bLogicTimeStamp=" + bLogicTimeStamp
 				+ ", userDateStamp=" + userDateStamp + ", userTimeStamp=" + userTimeStamp + ", userId=" + userId + "]";
+	}
+
+	@Override
+	public Object getPrimaryKey() {
+		return null;
 	}
 
 }

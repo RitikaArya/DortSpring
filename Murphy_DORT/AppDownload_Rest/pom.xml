@@ -75,7 +75,12 @@
 			<version>1.7.6</version>
 			<scope>provided</scope>
 		</dependency>
-    
+
+		<dependency>
+			<groupId>com.murphy.dort</groupId>
+			<artifactId>AppDownload_Services</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
   </dependencies>
   <build>
     <finalName>AppDownload_Rest</finalName>

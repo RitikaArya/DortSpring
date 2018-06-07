@@ -5,9 +5,11 @@ import java.util.Date;
 import org.codehaus.jackson.annotate.JsonAutoDetect;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import com.murphy.appdownload.exception.InvalidInputFault;
+import com.murphy.appdownload.util.EnOperation;
 
 @JsonAutoDetect
-public class DowntimeCaptureDto {
+public class DowntimeCaptureDto extends BaseDto {
 
 	private String uwiId;
 //	private int objectType;
@@ -287,6 +289,16 @@ public class DowntimeCaptureDto {
 		return "DowntimeCaptureDto [uwiId=" + uwiId + ", originalDateEntered=" + originalDateEntered
 				+ ", durationInHours=" + durationInHours + ", durationInMinutes=" + durationInMinutes + ", parentCode="
 				+ parentCode + ", childCode=" + childCode + ", startDate=" + startDate + ", comments=" + comments + "]";
+	}
+
+	@Override
+	public Boolean getValidForUsage() {
+		return null;
+	}
+
+	@Override
+	public void validate(EnOperation enOperation) throws InvalidInputFault {
+		
 	}
 
 }
