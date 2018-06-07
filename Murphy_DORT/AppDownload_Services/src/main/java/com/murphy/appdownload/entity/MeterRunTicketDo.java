@@ -4,11 +4,8 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 
-@Entity
-@Table(name="")
 public class MeterRunTicketDo {
 
-	@Column
 	private int merrickId;
 	private String recordDate;
 	private String runTicketNumber;
