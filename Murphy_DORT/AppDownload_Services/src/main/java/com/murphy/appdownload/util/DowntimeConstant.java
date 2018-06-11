@@ -2,9 +2,9 @@ package com.murphy.appdownload.util;
 
 public interface DowntimeConstant {
 
-	String MS_DB_USERNAME = "iop_user";
-	String MS_DB_PASSWORD = "$i0pu$er$";
-	String MS_DB_CONNECTION_URL = "jdbc:sqlserver://10.100.0.123:1433;databaseName=procount_Test";
+	//String MS_DB_USERNAME = "iop_user";
+	//String MS_DB_PASSWORD = "$i0pu$er$";
+	//String MS_DB_CONNECTION_URL = "jdbc:sqlserver://10.100.0.123:1433;databaseName=procount_Test";
 	String CLOUD_SUBACCOUNT_NAME = "d7e367960";		//MCQ
 	//String CLOUD_SUBACCOUNT_NAME = "d998e5467";		//MCD
 	String CLOUD_LOCATION = "houston";

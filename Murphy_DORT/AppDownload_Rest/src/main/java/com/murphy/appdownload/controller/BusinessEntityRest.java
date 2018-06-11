@@ -1,46 +1,45 @@
 package com.murphy.appdownload.controller;
 
-import javax.ws.rs.Consumes;
-import javax.ws.rs.GET;
-import javax.ws.rs.Path;
-import javax.ws.rs.Produces;
-import javax.ws.rs.core.MediaType;
 
-import com.murphy.dort.dto.UIResponseDto;
-import com.murphy.dort.service.BusinessEntityLocal;
-import com.murphy.dort.service.BusinessEntityService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RestController;
 
-@Path("/businessEntity")
-@Produces({ MediaType.APPLICATION_JSON })
-@Consumes({ MediaType.APPLICATION_JSON })
+import com.murphy.appdownload.dto.UIResponseDto;
+import com.murphy.appdownload.service.BusinessEntityService;
+import com.murphy.appdownload.service.interfaces.BusinessEntityLocal;
+
+@RestController
+@CrossOrigin
+@ComponentScan("com.murphy")
+@RequestMapping(value = "/businessEntity", produces = "application/json")
 public class BusinessEntityRest {
 	
-
+	@Autowired
 	BusinessEntityLocal businessEntityLocal;
 
-	@GET
-	@Path("/haulerFlag")
+	@RequestMapping(value = "/haulerFlag", method = RequestMethod.GET)
 	public UIResponseDto fetchBusinessEntityDtFrHaulerFlag() {
 		businessEntityLocal = new BusinessEntityService();
 		return businessEntityLocal.fetchBusinessEntityDtFrHaulerFlag();
 	}
 	
-	@GET
-	@Path("/transporterFlag")
+	@RequestMapping(value = "/transporterFlag", method = RequestMethod.GET)
 	public UIResponseDto fetchBusinessEntityDtFrTransporterFlag() {
 		businessEntityLocal = new BusinessEntityService();
 		return businessEntityLocal.fetchBusinessEntityDtFrTransporterFlag();
 	}
 	
-	@GET
-	@Path("/purchaserFlag")
+	@RequestMapping(value = "/purchaserFlag", method = RequestMethod.GET)
 	public UIResponseDto fetchBusinessEntityDtFrPurchaserFlag() {
 		businessEntityLocal = new BusinessEntityService();
 		return businessEntityLocal.fetchBusinessEntityDtFrPurchaserFlag();
 	}
 	
-	@GET
-	@Path("/fetchDt")
+	@RequestMapping(value = "/fetchDt", method = RequestMethod.GET)
 	public UIResponseDto fetchBusinessEntityDt() {
 		businessEntityLocal = new BusinessEntityService();
 		return businessEntityLocal.fetchBusinessEntityDt();

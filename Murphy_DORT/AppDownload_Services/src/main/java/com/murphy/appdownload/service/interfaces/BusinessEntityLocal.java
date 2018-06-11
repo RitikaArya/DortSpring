@@ -1,6 +1,6 @@
-package com.murphy.dort.service;
+package com.murphy.appdownload.service.interfaces;
 
-import com.murphy.dort.dto.UIResponseDto;
+import com.murphy.appdownload.dto.UIResponseDto;
 
 public interface BusinessEntityLocal {
 	public UIResponseDto fetchBusinessEntityDtFrHaulerFlag();

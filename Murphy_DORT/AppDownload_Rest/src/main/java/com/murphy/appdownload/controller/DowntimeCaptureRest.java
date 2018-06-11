@@ -23,7 +23,7 @@ import com.murphy.appdownload.service.interfaces.DowntimeCaptureLocal;
 @RestController
 @CrossOrigin
 @ComponentScan("com.murphy")
-@RequestMapping(value = "/alarmFeed", produces = "application/json")
+@RequestMapping(value = "/downtimeCapture", produces = "application/json")
 public class DowntimeCaptureRest {
 	
 	@Autowired

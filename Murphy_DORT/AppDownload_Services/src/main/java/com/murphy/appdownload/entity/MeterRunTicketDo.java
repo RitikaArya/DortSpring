@@ -1,8 +1,5 @@
 package com.murphy.appdownload.entity;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Table;
 
 public class MeterRunTicketDo {
 

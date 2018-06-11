@@ -1,16 +1,14 @@
 package com.murphy.appdownload.service;
 
-import java.sql.Connection;
-import java.sql.SQLException;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import com.murphy.dort.dao.BusinessEntityDao;
-import com.murphy.dort.dto.ResponseMessage;
-import com.murphy.dort.dto.UIResponseDto;
-import com.murphy.downtime.util.DBConnection;
-import com.murphy.downtime.util.DowntimeServicesUtil;
+import com.murphy.appdownload.dao.BusinessEntityDao;
+import com.murphy.appdownload.dto.ResponseMessage;
+import com.murphy.appdownload.dto.UIResponseDto;
+import com.murphy.appdownload.service.interfaces.BusinessEntityLocal;
+import com.murphy.appdownload.util.DowntimeServicesUtil;
 
 public class BusinessEntityService implements BusinessEntityLocal {
 
@@ -30,15 +28,13 @@ public class BusinessEntityService implements BusinessEntityLocal {
 		} catch (Exception e) {
 			logger.error("[fetchDataFromDispositionCodeTb] : ERROR- Exception while setting SOCKS " + e);
 		}
-		Connection connection = DBConnection.getConnection();
 
-		if (connection != null) {
 			businessEntityDao = new BusinessEntityDao();
 			try {
 				logger.info("[fetchBusinessEntityDt] : INFO- Connection to DB successful");
 
 				uiResponseDto
-						.setBusinessEntityList(businessEntityDao.fetchBusinessEntityDt(connection));
+						.setBusinessEntityList(businessEntityDao.fetchBusinessEntityDt());
 				responseMessage.setMessage("Successful");
 				responseMessage.setStatus("true");
 			} catch (Exception e) {
@@ -48,21 +44,11 @@ public class BusinessEntityService implements BusinessEntityLocal {
 				responseMessage.setStatus("false");
 			} finally {
 				try {
-					connection.close();
-				} catch (SQLException e) {
-					logger.error(
-							"[fetchBusinessEntityDt] : ERROR- Exception while closing Connection " + e);
-				}
-				try {
 					DowntimeServicesUtil.unSetupSOCKS();
 				} catch (Exception e) {
 					logger.error("[fetchBusinessEntityDt] : ERROR- Exception while unsetting SOCKS " + e);
 				}
 			}
-		} else {
-			responseMessage.setMessage("Connection to Database is not possible");
-			responseMessage.setStatus("false");
-		}
 
 		logger.info("[fetchBusinessEntityDt] : UIResponseDto " + uiResponseDto);
 		uiResponseDto.setResponseMessage(responseMessage);
@@ -83,15 +69,13 @@ public class BusinessEntityService implements BusinessEntityLocal {
 		} catch (Exception e) {
 			logger.error("[fetchDataFromDispositionCodeTb] : ERROR- Exception while setting SOCKS " + e);
 		}
-		Connection connection = DBConnection.getConnection();
 
-		if (connection != null) {
 			businessEntityDao = new BusinessEntityDao();
 			try {
 				logger.info("[fetchBusinessEntityDtFrHaulerFlag] : INFO- Connection to DB successful");
 
 				uiResponseDto
-						.setBusinessEntityList(businessEntityDao.fetchBusinessEntityDtFrHaulerFlag(connection));
+						.setBusinessEntityList(businessEntityDao.fetchBusinessEntityDtFrHaulerFlag());
 				responseMessage.setMessage("Successful");
 				responseMessage.setStatus("true");
 			} catch (Exception e) {
@@ -101,21 +85,11 @@ public class BusinessEntityService implements BusinessEntityLocal {
 				responseMessage.setStatus("false");
 			} finally {
 				try {
-					connection.close();
-				} catch (SQLException e) {
-					logger.error(
-							"[fetchBusinessEntityDtFrHaulerFlag] : ERROR- Exception while closing Connection " + e);
-				}
-				try {
 					DowntimeServicesUtil.unSetupSOCKS();
 				} catch (Exception e) {
 					logger.error("[fetchBusinessEntityDtFrHaulerFlag] : ERROR- Exception while unsetting SOCKS " + e);
 				}
 			}
-		} else {
-			responseMessage.setMessage("Connection to Database is not possible");
-			responseMessage.setStatus("false");
-		}
 
 		logger.info("[fetchBusinessEntityDtFrHaulerFlag] : UIResponseDto " + uiResponseDto);
 		uiResponseDto.setResponseMessage(responseMessage);
@@ -136,15 +110,13 @@ public class BusinessEntityService implements BusinessEntityLocal {
 		} catch (Exception e) {
 			logger.error("[fetchDataFromDispositionCodeTb] : ERROR- Exception while  setting SOCKS " + e);
 		}
-		Connection connection = DBConnection.getConnection();
 
-		if (connection != null) {
 			businessEntityDao = new BusinessEntityDao();
 			try {
 				logger.info("[fetchBusinessEntityDtFrTransporterFlag] : INFO- Connection to DB successful");
 
 				uiResponseDto
-						.setBusinessEntityList(businessEntityDao.fetchBusinessEntityDtFrTransporterFlag(connection));
+						.setBusinessEntityList(businessEntityDao.fetchBusinessEntityDtFrTransporterFlag());
 				responseMessage.setMessage("Successful");
 				responseMessage.setStatus("true");
 			} catch (Exception e) {
@@ -154,21 +126,11 @@ public class BusinessEntityService implements BusinessEntityLocal {
 				responseMessage.setStatus("false");
 			} finally {
 				try {
-					connection.close();
-				} catch (SQLException e) {
-					logger.error(
-							"[fetchBusinessEntityDtFrTransporterFlag] : ERROR- Exception while closing Connection " + e);
-				}
-				try {
 					DowntimeServicesUtil.unSetupSOCKS();
 				} catch (Exception e) {
 					logger.error("[fetchBusinessEntityDtFrTransporterFlag] : ERROR- Exception while unsetting SOCKS " + e);
 				}
 			}
-		} else {
-			responseMessage.setMessage("Connection to Database is not possible");
-			responseMessage.setStatus("false");
-		}
 
 		logger.info("[fetchBusinessEntityDtFrTransporterFlag] : UIResponseDto " + uiResponseDto);
 		uiResponseDto.setResponseMessage(responseMessage);
@@ -190,15 +152,13 @@ public class BusinessEntityService implements BusinessEntityLocal {
 		} catch (Exception e) {
 			logger.error("[fetchDataFromDispositionCodeTb] : ERROR- Exception while setting SOCKS " + e);
 		}
-		Connection connection = DBConnection.getConnection();
 
-		if (connection != null) {
 			businessEntityDao = new BusinessEntityDao();
 			try {
 				logger.info("[fetchBusinessEntityDtFrPurchaserFlag] : INFO- Connection to DB successful");
 
 				uiResponseDto
-						.setBusinessEntityList(businessEntityDao.fetchBusinessEntityDtFrPurchaserFlag(connection));
+						.setBusinessEntityList(businessEntityDao.fetchBusinessEntityDtFrPurchaserFlag());
 				responseMessage.setMessage("Successful");
 				responseMessage.setStatus("true");
 			} catch (Exception e) {
@@ -208,21 +168,11 @@ public class BusinessEntityService implements BusinessEntityLocal {
 				responseMessage.setStatus("false");
 			} finally {
 				try {
-					connection.close();
-				} catch (SQLException e) {
-					logger.error(
-							"[fetchBusinessEntityDtFrPurchaserFlag] : ERROR- Exception while closing Connection " + e);
-				}
-				try {
 					DowntimeServicesUtil.unSetupSOCKS();
 				} catch (Exception e) {
 					logger.error("[fetchBusinessEntityDtFrPurchaserFlag] : ERROR- Exception while unsetting SOCKS " + e);
 				}
 			}
-		} else {
-			responseMessage.setMessage("Connection to Database is not possible");
-			responseMessage.setStatus("false");
-		}
 
 		logger.info("[fetchBusinessEntityDtFrPurchaserFlag] : UIResponseDto " + uiResponseDto);
 		uiResponseDto.setResponseMessage(responseMessage);
