@@ -1,100 +1,294 @@
 package com.murphy.appdownload.entity;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
+@Entity
+@Table(name = "MeterRunTicketTb")
 public class MeterRunTicketDo {
 
+	@Id
+	@Column(name = "MerrickID")
 	private int merrickId;
+	
+	@Id
+	@Column(name = "RecordDate")
 	private String recordDate;
+	
+	@Id
+	@Column(name = "RunTicketNumber", length = 22)
 	private String runTicketNumber;
+	
+	@Column(name = "DispositionCode")
 	private int dispositionCode;
+	
+	@Column(name = "RunOrDispositionFlag")
 	private int runOrDispositionFlag;
+	
+	@Column(name = "FluidDisposition")
 	private int fluidDisposition;
+	
+	@Column(name = "Destination", length = 40)
 	private String destination;
+	
+	@Column(name = "DestinationObjectId")
 	private int destinationObjectId;
+	
+	@Column(name = "DestinationObjectType")
 	private int destinationObjectType;
+	
+	@Column(name = "OriginationObjectId")
 	private int originationObjectId;
+	
+	@Column(name = "OriginationObjectType")
 	private int originationObjectType;
+	
+	@Column(name = "SourceID")
 	private int sourceID;
+	
+	@Column(name = "SourceType")
 	private int sourceType;
+	
+	@Column(name = "ProductCode")
 	private int productCode;
+	
+	@Column(name = "ProductType")
 	private int productType;
+	
+	@Column(name = "DataSourceCode")
 	private int dataSourceCode;
+	
+	@Column(name = "ActualEstimatedFlag")
 	private int actualEstimatedFlag;
+	
+	@Column(name = "BSAndW")
 	private float bSAndW;
+	
+	@Column(name = "EmulsionPercent")
 	private float emulsionPercent;
+	
+	@Column(name = "WaxPercent")
 	private float waxPercent;
+	
+	@Column(name = "SaltContentPPM")
 	private float saltContentPPM;
+	
+	@Column(name = "SulfurContentPPM")
 	private float sulfurContentPPM;
+	
+	@Column(name = "WaterVaporContentPPM")
 	private float waterVaporContentPPM;
+	
+	@Column(name = "RunTicketDate")
 	private String runTicketDate;
+	
+	@Column(name = "RunOpenDate")
 	private String runOpenDate;
+	
+	@Column(name = "RunOpenTime", length = 8)
 	private String runOpenTime;
+	
+	@Column(name = "RunCloseDate")
 	private String runCloseDate;
+	
+	@Column(name = "RunCloseTime", length = 8)
 	private String runCloseTime;
+	
+	@Column(name = "OpenOdometer")
 	private float openOdometer;
+	
+	@Column(name = "CloseOdometer")
 	private float closeOdometer;
+	
+	@Column(name = "LactMeterFactor")
 	private float lactMeterFactor;
+	
+	@Column(name = "LactCompressibilityFactor")
 	private float lactCompressibilityFactor;
+	
+	@Column(name = "LactDensityCorrection")
 	private float lactDensityCorrection;
+	
+	@Column(name = "OpenTemperature")
 	private float openTemperature;
+	
+	@Column(name = "CloseTemperature")
 	private float closeTemperature;
+	
+	@Column(name = "ObservedTemperature")
 	private float observedTemperature;
+	
+	@Column(name = "ActualGravity")
 	private float actualGravity;
+	
+	@Column(name = "ConvertedGravity")
 	private float convertedGravity;
+	
+	@Column(name = "ReidVaporPressure")
 	private float reidVaporPressure;
+	
+	@Column(name = "GrossBarrels")
 	private float grossBarrels;
+	
+	@Column(name = "NetBarrels")
 	private float netBarrels;
+	
+	@Column(name = "NetWaterBarrels")
 	private float netWaterBarrels;
+	
+	@Column(name = "AllocatedOilBarrels")
 	private float allocatedOilBarrels;
+	
+	@Column(name = "AllocatedWaterBarrels")
 	private float allocatedWaterBarrels;
+	
+	@Column(name = "Hauler")
 	private int hauler;
+	
+	@Column(name = "HaulerLoc")
 	private int haulerLoc;
+	
+	@Column(name = "haulerMeterID", length = 20)
 	private String haulerMeterID;
+	
+	@Column(name = "HaulerReportedBarrels")
 	private float haulerReportedBarrels;
+	
+	@Column(name = "HaulerReportedNetBarrels")
 	private float haulerReportedNetBarrels;
+	
+	@Column(name = "UseHaulerBarrelsFlag")
 	private int useHaulerBarrelsFlag;
+	
+	@Column(name = "HaulerStatementDate")
 	private String haulerStatementDate;
+	
+	@Column(name = "Purchaser")
 	private int purchaser;
+	
+	@Column(name = "PurchaserLoc")
 	private int purchaserLoc;
+	
+	@Column(name = "PurchaserMeterID", length = 20)
 	private String purchaserMeterID;
+	
+	@Column(name = "UnitsFlag")
 	private int unitsFlag;
+	
+	@Column(name = "DeleteFlag")
 	private int deleteFlag;
+	
+	@Column(name = "BackgroundTaskFlag")
 	private int backgroundTaskFlag;
+	
+	@Column(name = "LastTransmission")
 	private int lastTransmission;
+	
+	@Column(name = "LastLoadDate")
 	private String lastLoadDate;
+	
+	@Column(name = "LastLoadTime", length = 8)
 	private String lastLoadTime;
+	
+	@Column(name = "TransmitFlag")
 	private int transmitFlag;
+	
+	@Column(name = "RunNo", length = 20)
 	private String runNo;
+	
+	@Column(name = "DateInstalled")
 	private String dateInstalled;
+	
+	@Column(name = "DateInService")
 	private String dateInService;
+	
+	@Column(name = "SampleDate")
 	private String sampleDate;
+	
+	@Column(name = "DateProved")
 	private String dateProved;
+	
+	@Column(name = "AdjustedGross")
 	private float adjustedGross;
+	
+	@Column(name = "AdjustedNet")
 	private float adjustedNet;
+	
+	@Column(name = "WaterCarryOver")
 	private float waterCarryOver;
+	
+	@Column(name = "GasBlowBy")
 	private float gasBlowBy;
+	
+	@Column(name = "MeterMalfunction")
 	private float meterMalfunction;
+	
+	@Column(name = "TemperatureCompensation")
 	private int temperatureCompensation;
+	
+	@Column(name = "MeterFactor")
 	private int meterFactor;
+	
+	@Column(name = "PSIFactor")
 	private int psiFactor;
+	
+	@Column(name = "LinePressure")
 	private float linePressure;
+	
+	@Column(name = "PressureFactor", length = 20)
 	private String pressureFactor;
+	
+	@Column(name = "LineTemperature")
 	private float lineTemperature;
+	
+	@Column(name = "Comments", length = 250)
 	private String comments;
+	
+	@Column(name = "BLogicDateStamp")
 	private String bLogicDateStamp;
+	
+	@Column(name = "BLogicTimeStamp", length = 8)
 	private String bLogicTimeStamp;
+	
+	@Column(name = "AllocationDateStamp")
 	private String allocationDateStamp;
+	
+	@Column(name = "AllocationTimeStamp", length = 8)
 	private String allocationTimeStamp;
+	
+	@Column(name = "UserDateStamp")
 	private String userDateStamp;
+	
+	@Column(name = "UserTimeStamp", length = 8)
 	private String userTimeStamp;
+	
+	@Column(name = "UserID")
 	private int userID;
+	
+	@Column(name = "PurchaserStatementID")
 	private int purchaserStatementID;
+	
+	@Column(name = "HaulerStatementID")
 	private int haulerStatementID;
+	
+	@Column(name = "GrossNGL")
 	private float grossNGL;
+	
+	@Column(name = "NetNGL")
 	private float netNGL;
+	
+	@Column(name = "AllocatedNGL")
 	private float allocatedNGL;
+	
+	@Column(name = "PurchaserStatementSeq")
 	private int purchaserStatementSeq;
+	
+	@Column(name = "HaulerStatementSeq")
 	private int haulerStatementSeq;
+	
+	@Column(name = "CalculationStatusFlag")
 	private int calculationStatusFlag;
 	
 	public int getMerrickId() {
