@@ -5,6 +5,8 @@ import java.util.List;
 import org.hibernate.Query;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.murphy.appdownload.dto.DowntimeCaptureDto;
 import com.murphy.appdownload.entity.DowntimeCaptureDo;
@@ -13,6 +15,8 @@ import com.murphy.appdownload.exception.InvalidInputFault;
 import com.murphy.appdownload.exception.NoResultFault;
 import com.murphy.appdownload.util.ServicesUtil;
 
+@Repository("DowntimeCaptureDao")
+@Transactional
 public class DowntimeCaptureDao extends BaseDao<DowntimeCaptureDo, DowntimeCaptureDto>{
 
 	private static final Logger logger = LoggerFactory.getLogger(DowntimeCaptureDao.class);

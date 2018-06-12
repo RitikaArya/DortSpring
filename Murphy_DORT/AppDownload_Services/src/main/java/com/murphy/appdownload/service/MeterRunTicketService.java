@@ -3,6 +3,7 @@ package com.murphy.appdownload.service;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.stereotype.Service;
 
 import com.murphy.appdownload.dao.MeterRunTicketDao;
 import com.murphy.appdownload.dto.MeterRunTicketDto;
@@ -13,6 +14,7 @@ import com.murphy.appdownload.service.interfaces.MeterRunTicketLocal;
 import com.murphy.appdownload.util.DortConstant;
 import com.murphy.appdownload.util.DowntimeServicesUtil;
 
+@Service
 public class MeterRunTicketService implements MeterRunTicketLocal {
 
 	private static final Logger logger = LoggerFactory.getLogger(MeterRunTicketService.class);

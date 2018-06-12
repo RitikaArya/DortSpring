@@ -15,6 +15,8 @@ import java.util.List;
 import java.util.TimeZone;
 import java.util.concurrent.TimeUnit;
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.w3c.dom.Element;
@@ -610,6 +612,14 @@ public class ServicesUtil {
 
         return (hours + "hr " + minutes + "min");
     }
+	
+	public static String getServerUrl(HttpServletRequest request) {
+		String contextPath = request.getContextPath();
+		String url = request.getRequestURL().toString();
+		url = url.substring(0, url.indexOf(contextPath));
+		url += contextPath;
+		return url;
+	}
 	
 }
 

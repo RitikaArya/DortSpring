@@ -3,6 +3,7 @@ package com.murphy.appdownload.service;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.stereotype.Service;
 
 import com.murphy.appdownload.dao.BusinessEntityDao;
 import com.murphy.appdownload.dto.ResponseMessage;
@@ -10,6 +11,7 @@ import com.murphy.appdownload.dto.UIResponseDto;
 import com.murphy.appdownload.service.interfaces.BusinessEntityLocal;
 import com.murphy.appdownload.util.DowntimeServicesUtil;
 
+@Service
 public class BusinessEntityService implements BusinessEntityLocal {
 
 	private static final Logger logger = LoggerFactory.getLogger(BusinessEntityService.class);

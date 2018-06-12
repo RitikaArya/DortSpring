@@ -1,0 +1,8 @@
+com\murphy\appdownload\controller\MeterRunTicketRest.class
+com\murphy\appdownload\controller\ProductCodeRest.class
+com\murphy\appdownload\controller\MeterRest.class
+com\murphy\appdownload\controller\AppFileController.class
+com\murphy\appdownload\controller\BusinessEntityRest.class
+com\murphy\appdownload\controller\DispositionCodeRest.class
+com\murphy\appdownload\controller\DowntimeCaptureRest.class
+com\murphy\appdownload\controller\AppFileRestController.class

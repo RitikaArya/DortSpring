@@ -3,6 +3,7 @@ package com.murphy.appdownload.service;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.stereotype.Service;
 
 import com.murphy.appdownload.service.interfaces.ProductCodeLocal;
 import com.murphy.appdownload.dao.ProductCodeDao;
@@ -11,6 +12,7 @@ import com.murphy.appdownload.dto.UIRequestDto;
 import com.murphy.appdownload.dto.UIResponseDto;
 import com.murphy.appdownload.util.DowntimeServicesUtil;
 
+@Service
 public class ProductCodeService implements ProductCodeLocal {
 
 	private static final Logger logger = LoggerFactory.getLogger(ProductCodeService.class);

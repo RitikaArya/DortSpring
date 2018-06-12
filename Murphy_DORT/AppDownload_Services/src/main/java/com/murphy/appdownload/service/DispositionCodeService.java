@@ -3,6 +3,7 @@ package com.murphy.appdownload.service;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.stereotype.Service;
 
 import com.murphy.appdownload.dao.DispositionCodeDao;
 import com.murphy.appdownload.dto.ResponseMessage;
@@ -11,6 +12,7 @@ import com.murphy.appdownload.dto.UIResponseDto;
 import com.murphy.appdownload.service.interfaces.DispositionCodeLocal;
 import com.murphy.appdownload.util.DowntimeServicesUtil;
 
+@Service
 public class DispositionCodeService implements DispositionCodeLocal {
 
 	private static final Logger logger = LoggerFactory.getLogger(DispositionCodeService.class);

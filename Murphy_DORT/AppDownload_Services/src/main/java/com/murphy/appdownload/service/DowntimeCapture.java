@@ -7,6 +7,7 @@ import java.util.Date;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.stereotype.Service;
 
 import com.murphy.appdownload.dao.DowntimeCaptureDao;
 import com.murphy.appdownload.dto.DowntimeCaptureDto;
@@ -17,6 +18,7 @@ import com.murphy.appdownload.service.interfaces.DowntimeCaptureLocal;
 import com.murphy.appdownload.util.DowntimeConstant;
 import com.murphy.appdownload.util.DowntimeServicesUtil;
 
+@Service
 public class DowntimeCapture implements DowntimeCaptureLocal {
 
 	private static final Logger logger = LoggerFactory.getLogger(DowntimeCapture.class);
