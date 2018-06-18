@@ -41,7 +41,7 @@ public class MeterDao extends BaseDao<BaseDo, BaseDto>{
 			Query query = this.getSession().createSQLQuery(queryString);
 			List<Object[]> resultList = query.list();
 
-			if(ServicesUtil.isEmpty(resultList)){
+			if(!ServicesUtil.isEmpty(resultList)){
 				meterList = new ArrayList<>();
 				for (Object[] obj : resultList) {
 					MeterDto meterDto = new MeterDto();

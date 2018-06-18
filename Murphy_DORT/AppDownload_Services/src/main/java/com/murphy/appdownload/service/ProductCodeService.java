@@ -3,6 +3,7 @@ package com.murphy.appdownload.service;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.murphy.appdownload.service.interfaces.ProductCodeLocal;
@@ -17,13 +18,16 @@ public class ProductCodeService implements ProductCodeLocal {
 
 	private static final Logger logger = LoggerFactory.getLogger(ProductCodeService.class);
 
+	@Autowired
+	ProductCodeDao productCodeDao;
+	
 	@Override
 	public UIResponseDto fetchDataFromProductCodeTb(UIRequestDto uiRequestDto) {
 
 		logger.info("[fetchDataFromProductCodeTb] : INFO- Service Started");
 		UIResponseDto uiResponseDto = new UIResponseDto();
 		ResponseMessage responseMessage = new ResponseMessage();
-		ProductCodeDao productCodeDao = null;
+//		ProductCodeDao productCodeDao = null;
 
 		try {
 			DowntimeServicesUtil.setupSOCKS();
@@ -31,7 +35,7 @@ public class ProductCodeService implements ProductCodeLocal {
 			logger.error("[fetchDataFromProductCodeTb] : ERROR- Exception while setting SOCKS " + e);
 		}
 		
-			productCodeDao = new ProductCodeDao();
+//			productCodeDao = new ProductCodeDao();
 			try {
 				logger.info("[fetchDataFromProductCodeTb] : INFO- Connection to DB successful");
 				uiResponseDto.setProductCodeDtoList(productCodeDao.fetchDataFromProductCodeTb(uiRequestDto));

@@ -3,6 +3,7 @@ package com.murphy.appdownload.service;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.murphy.appdownload.dao.MeterRunTicketDao;
@@ -19,12 +20,15 @@ public class MeterRunTicketService implements MeterRunTicketLocal {
 
 	private static final Logger logger = LoggerFactory.getLogger(MeterRunTicketService.class);
 
+	@Autowired
+	MeterRunTicketDao meterRunTicketDao;
+	
 	@Override
 	public UIResponseDto insertRecordinDB(MeterRunTicketDto meterRunTicketDto) {
 		logger.info("[insertRecordinDB] : INFO- Service Started");
 		UIResponseDto uiResponseDto = new UIResponseDto();
 		ResponseMessage responseMessage = new ResponseMessage();
-		MeterRunTicketDao meterRunTicketDao = null;
+//		MeterRunTicketDao meterRunTicketDao = null;
 		if (meterRunTicketDto != null && meterRunTicketDto.getMerrickId() != null) {
 			try {
 				DowntimeServicesUtil.setupSOCKS();
@@ -32,7 +36,7 @@ public class MeterRunTicketService implements MeterRunTicketLocal {
 				logger.error("[fetchDataFromDispositionCodeTb] : ERROR- Exception while setting SOCKS " + e);
 			}
 
-				meterRunTicketDao = new MeterRunTicketDao();
+//				meterRunTicketDao = new MeterRunTicketDao();
 				try {
 					logger.info("[insertRecordinDB] : INFO- Connection to DB successful");
 

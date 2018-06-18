@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.murphy.appdownload.dto.UIResponseDto;
-import com.murphy.appdownload.service.MeterService;
 import com.murphy.appdownload.service.interfaces.MeterServiceLocal;
 
 @RestController
@@ -23,7 +22,7 @@ public class MeterRest {
 
 	@RequestMapping(value = "/fetchMeters", method = RequestMethod.GET)
 	public UIResponseDto fetchMetersDt() {
-		meterServiceLocal = new MeterService();
+//		meterServiceLocal = new MeterService();
 		return meterServiceLocal.fetchMetersDt();
 	}
 	

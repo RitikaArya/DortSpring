@@ -7,6 +7,7 @@ import java.util.Date;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.murphy.appdownload.dao.DowntimeCaptureDao;
@@ -23,6 +24,9 @@ public class DowntimeCapture implements DowntimeCaptureLocal {
 
 	private static final Logger logger = LoggerFactory.getLogger(DowntimeCapture.class);
 
+	@Autowired
+	DowntimeCaptureDao downtimeCaptureDao;
+	
 	@Override
 	public DowntimeCaptureFetchResponseDto fetchRecordForProvidedUwiIdAndDate(Date originalDateEntered, String uwiId) {
 		logger.info("[insertOrUpdateCounts] : INFO- Service Started");
@@ -32,14 +36,14 @@ public class DowntimeCapture implements DowntimeCaptureLocal {
 		ResponseMessage responseMessage = new ResponseMessage();
 
 		if (originalDateEntered != null && uwiId != null && uwiId.length() > 0) {
-			DowntimeCaptureDao downtimeCaptureDao = null;
+//			DowntimeCaptureDao downtimeCaptureDao = null;
 
 			try {
 				DowntimeServicesUtil.setupSOCKS();
 			} catch (Exception e) {
 				logger.error("[insertOrUpdateCounts] : ERROR- Exception while setting SOCKS " + e);
 			}
-				downtimeCaptureDao = new DowntimeCaptureDao();
+//				downtimeCaptureDao = new DowntimeCaptureDao();
 				try {
 					logger.info("[insertOrUpdateCounts] : INFO- Connection to DB successful");
 
@@ -96,7 +100,7 @@ public class DowntimeCapture implements DowntimeCaptureLocal {
 		ResponseMessage responseMessage = new ResponseMessage();
 		if (downtimeCaptureDto != null && downtimeCaptureDto.getOriginalDateEntered() != null && downtimeCaptureDto.getUwiId() != null
 				&& downtimeCaptureDto.getUwiId().length() > 0) {
-			DowntimeCaptureDao downtimeCaptureDao = null;
+//			DowntimeCaptureDao downtimeCaptureDao = null;
 			DowntimeCaptureDo downtimeCaptureDoUI = null;
 
 			try {
@@ -104,7 +108,7 @@ public class DowntimeCapture implements DowntimeCaptureLocal {
 			} catch (Exception e) {
 				logger.error("[insertOrUpdateCounts] : ERROR- Exception while setting SOCKS " + e);
 			}
-				downtimeCaptureDao = new DowntimeCaptureDao();
+//				downtimeCaptureDao = new DowntimeCaptureDao();
 				try {
 					logger.info("[insertOrUpdateCounts] : INFO- Connection to DB successful");
 

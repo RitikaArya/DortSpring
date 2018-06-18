@@ -3,6 +3,7 @@ package com.murphy.appdownload.service;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.murphy.appdownload.dao.DispositionCodeDao;
@@ -17,12 +18,15 @@ public class DispositionCodeService implements DispositionCodeLocal {
 
 	private static final Logger logger = LoggerFactory.getLogger(DispositionCodeService.class);
 
+	@Autowired
+	DispositionCodeDao dispositionCodeDao;
+	
 	@Override
 	public UIResponseDto fetchDataFromDispositionCodeTb(UIRequestDto uiRequestDto) {
 		logger.info("[fetchDataFromDispositionCodeTb] : INFO- Service Started");
 		UIResponseDto uiResponseDto = new UIResponseDto();
 		ResponseMessage responseMessage = new ResponseMessage();
-		DispositionCodeDao dispositionCodeDao = null;
+//		DispositionCodeDao dispositionCodeDao = null;
 		if (uiRequestDto != null && uiRequestDto.getMerrickIdList() != null && uiRequestDto.getMerrickIdList().size()>0) {
 			try {
 				DowntimeServicesUtil.setupSOCKS();
@@ -30,7 +34,7 @@ public class DispositionCodeService implements DispositionCodeLocal {
 				logger.error("[fetchDataFromDispositionCodeTb] : ERROR- Exception while setting SOCKS " + e);
 			}
 
-				dispositionCodeDao = new DispositionCodeDao();
+//				dispositionCodeDao = new DispositionCodeDao();
 				try {
 					logger.info("[fetchDataFromDispositionCodeTb] : INFO- Connection to DB successful");
 					

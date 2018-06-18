@@ -44,7 +44,7 @@ public class ProductCodeDao extends BaseDao<BaseDo, BaseDto>{
 			Query query = this.getSession().createSQLQuery(queryString);
 			List<Object[]> resultList = query.list();
 
-			if(ServicesUtil.isEmpty(resultList)){
+			if(!ServicesUtil.isEmpty(resultList)){
 				productCodeDtoList = new ArrayList<>();
 				for (Object[] obj : resultList) {
 					ProductCodeDto productCodeDto = new ProductCodeDto();

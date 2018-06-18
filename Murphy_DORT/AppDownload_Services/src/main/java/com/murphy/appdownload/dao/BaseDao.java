@@ -13,6 +13,7 @@ import org.hibernate.SessionFactory;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -23,6 +24,7 @@ import com.murphy.appdownload.exception.InvalidInputFault;
 import com.murphy.appdownload.exception.NoResultFault;
 import com.murphy.appdownload.exception.RecordExistFault;
 import com.murphy.appdownload.exception.dto.MessageUIDto;
+import com.murphy.appdownload.util.DowntimeServicesUtil;
 import com.murphy.appdownload.util.EnOperation;
 import com.murphy.appdownload.util.ServicesUtil;
 
@@ -35,31 +37,32 @@ import com.murphy.appdownload.util.ServicesUtil;
  * @since CR8313
  */
 @Repository("baseDao")
-@Transactional
+@Transactional("sessionFactoryTransactionManager")
 public abstract class BaseDao<E extends BaseDo, D extends BaseDto>  {
 
 	private static final Logger logger = LoggerFactory.getLogger(BaseDao.class);
 
 	@Autowired
-	private SessionFactory sessionFactory;
+	@Qualifier("sessionFactoryProcount")
+	private SessionFactory sessionFactoryProcount;
 
 
 	public Session getSession() {
-		/*try {
-			ServicesUtil.unSetupSOCKS();
+		try {
+			DowntimeServicesUtil.setupSOCKS();
 			logger.error("basedao"+System.getProperty("socksProxyHost"));
 			logger.error("basedao"+System.getProperty("socksProxyPort"));
 			logger.error("basedao"+System.getProperty("java.net.socks.username"));
-			while(System.getProperty(MurphyConstant.SOCKS_PORT_NAME).equals(MurphyConstant.SOCKS_PORT)) {
-			}
+//			while(System.getProperty(DowntimeConstant.SOCKS_PORT_NAME).equals(DowntimeConstant.SOCKS_PORT)) {
+//			}
 		} catch (Exception e) {
 			logger.error("[Murphy][BaseDao][getSession][Socks Exception] "+e.getMessage());
-		} */
+		}
 		try {
-			return sessionFactory.getCurrentSession();
+			return sessionFactoryProcount.getCurrentSession();
 		} catch (HibernateException e){
 			logger.error("[Murphy][BaseDao][getSession][error] "+e.getMessage());
-			return sessionFactory.openSession();
+			return sessionFactoryProcount.openSession();
 		}
 
 	}

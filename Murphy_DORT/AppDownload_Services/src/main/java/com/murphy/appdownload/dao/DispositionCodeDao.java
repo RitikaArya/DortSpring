@@ -43,7 +43,7 @@ public class DispositionCodeDao extends BaseDao<BaseDo, BaseDto>{
 			Query query = this.getSession().createSQLQuery(queryString);
 			List<Object[]> resultList = query.list();
 			
-			if(ServicesUtil.isEmpty(resultList)){
+			if(!ServicesUtil.isEmpty(resultList)){
 				dispositionCodeDtoList = new ArrayList<>();
 				for (Object[] obj : resultList) {
 					DispositionCodeDto dispositionCodeDto = new DispositionCodeDto();

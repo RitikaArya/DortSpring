@@ -38,7 +38,7 @@ public class BusinessEntityDao extends BaseDao<BaseDo, BaseDto>{
 			Query query = this.getSession().createSQLQuery(queryString);
 			List<Object[]> resultList = query.list();
 			
-			if(ServicesUtil.isEmpty(resultList)){
+			if(!ServicesUtil.isEmpty(resultList)){
 				businessEntityList = new ArrayList<>();
 				for (Object[] obj : resultList) {
 					BusinessEntityDto businessEntityDto = new BusinessEntityDto();
@@ -72,7 +72,7 @@ public class BusinessEntityDao extends BaseDao<BaseDo, BaseDto>{
 			Query query = this.getSession().createSQLQuery(queryString);
 			List<Object[]> resultList = query.list();
 
-			if(ServicesUtil.isEmpty(resultList)){
+			if(!ServicesUtil.isEmpty(resultList)){
 				businessEntityList = new ArrayList<>();
 				for (Object[] obj : resultList) {
 					BusinessEntityDto businessEntityDto = new BusinessEntityDto();
@@ -101,7 +101,7 @@ public class BusinessEntityDao extends BaseDao<BaseDo, BaseDto>{
 			Query query = this.getSession().createSQLQuery(queryString);
 			List<Object[]> resultList = query.list();
 
-			if(ServicesUtil.isEmpty(resultList)){
+			if(!ServicesUtil.isEmpty(resultList)){
 				businessEntityList = new ArrayList<>();
 				for (Object[] obj : resultList) {
 					BusinessEntityDto businessEntityDto = new BusinessEntityDto();
@@ -130,7 +130,7 @@ public class BusinessEntityDao extends BaseDao<BaseDo, BaseDto>{
 			Query query = this.getSession().createSQLQuery(queryString);
 			List<Object[]> resultList = query.list();
 
-			if(ServicesUtil.isEmpty(resultList)){
+			if(!ServicesUtil.isEmpty(resultList)){
 				businessEntityList = new ArrayList<>();
 				for (Object[] obj : resultList) {
 					BusinessEntityDto businessEntityDto = new BusinessEntityDto();

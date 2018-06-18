@@ -31,16 +31,21 @@ public class HibernateConfiguration {
 	private Environment environment;
 	
 	@Autowired
-	@Qualifier("sessionFactory")
-	private SessionFactory sessionFactory;
+	@Qualifier("sessionFactoryProcount")
+	private SessionFactory sessionFactoryProcount;
 
-	@Bean(name = "sessionFactory")
-	public LocalSessionFactoryBean sessionFactory() {
-		LocalSessionFactoryBean sessionFactory = new LocalSessionFactoryBean();
-		sessionFactory.setDataSource(dataSource());
-		sessionFactory.setPackagesToScan(new String[] { "com.murphy" });
-		sessionFactory.setHibernateProperties(hibernateProperties());
-		return sessionFactory;
+	@Bean(name = "sessionFactoryProcount")
+	public LocalSessionFactoryBean sessionFactoryProcount() {
+//		try {
+//			DowntimeServicesUtil.setupSOCKS();
+//		} catch (Exception e) {
+//			System.err.println("Exception while setting up Socks : "+e.getMessage());
+//		}
+		LocalSessionFactoryBean sessionFactoryProcount = new LocalSessionFactoryBean();
+		sessionFactoryProcount.setDataSource(dataSource());
+		sessionFactoryProcount.setPackagesToScan(new String[] { "com.murphy" });
+		sessionFactoryProcount.setHibernateProperties(hibernateProperties());
+		return sessionFactoryProcount;
 	}
 
 	@Bean(name = "dataSource")
@@ -66,7 +71,7 @@ public class HibernateConfiguration {
 	@Bean(name = "sessionFactoryTransactionManager")
 	public HibernateTransactionManager transactionManager() {
 		HibernateTransactionManager txManager = new HibernateTransactionManager();
-		txManager.setSessionFactory(this.sessionFactory);
+		txManager.setSessionFactory(this.sessionFactoryProcount);
 		return txManager;
 	}
 

@@ -3,6 +3,7 @@ package com.murphy.appdownload.service;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.murphy.appdownload.dao.BusinessEntityDao;
@@ -16,6 +17,8 @@ public class BusinessEntityService implements BusinessEntityLocal {
 
 	private static final Logger logger = LoggerFactory.getLogger(BusinessEntityService.class);
 
+	@Autowired
+	BusinessEntityDao businessEntityDao;
 	
 	@Override
 	public UIResponseDto fetchBusinessEntityDt() {
@@ -23,7 +26,7 @@ public class BusinessEntityService implements BusinessEntityLocal {
 		logger.info("[fetchBusinessEntityDt] : INFO- Service Started");
 		UIResponseDto uiResponseDto = new UIResponseDto();
 		ResponseMessage responseMessage = new ResponseMessage();
-		BusinessEntityDao businessEntityDao = null;
+//		BusinessEntityDao businessEntityDao = null;
 
 		try {
 			DowntimeServicesUtil.setupSOCKS();
@@ -31,7 +34,7 @@ public class BusinessEntityService implements BusinessEntityLocal {
 			logger.error("[fetchDataFromDispositionCodeTb] : ERROR- Exception while setting SOCKS " + e);
 		}
 
-			businessEntityDao = new BusinessEntityDao();
+//			businessEntityDao = new BusinessEntityDao();
 			try {
 				logger.info("[fetchBusinessEntityDt] : INFO- Connection to DB successful");
 
@@ -64,7 +67,7 @@ public class BusinessEntityService implements BusinessEntityLocal {
 		logger.info("[fetchBusinessEntityDtFrHaulerFlag] : INFO- Service Started");
 		UIResponseDto uiResponseDto = new UIResponseDto();
 		ResponseMessage responseMessage = new ResponseMessage();
-		BusinessEntityDao businessEntityDao = null;
+//		BusinessEntityDao businessEntityDao = null;
 
 		try {
 			DowntimeServicesUtil.setupSOCKS();
@@ -72,7 +75,7 @@ public class BusinessEntityService implements BusinessEntityLocal {
 			logger.error("[fetchDataFromDispositionCodeTb] : ERROR- Exception while setting SOCKS " + e);
 		}
 
-			businessEntityDao = new BusinessEntityDao();
+//			businessEntityDao = new BusinessEntityDao();
 			try {
 				logger.info("[fetchBusinessEntityDtFrHaulerFlag] : INFO- Connection to DB successful");
 
@@ -105,7 +108,7 @@ public class BusinessEntityService implements BusinessEntityLocal {
 		logger.info("[fetchBusinessEntityDtFrTransporterFlag] : INFO- Service Started");
 		UIResponseDto uiResponseDto = new UIResponseDto();
 		ResponseMessage responseMessage = new ResponseMessage();
-		BusinessEntityDao businessEntityDao = null;
+//		BusinessEntityDao businessEntityDao = null;
 
 		try {
 			DowntimeServicesUtil.setupSOCKS();
@@ -113,7 +116,7 @@ public class BusinessEntityService implements BusinessEntityLocal {
 			logger.error("[fetchDataFromDispositionCodeTb] : ERROR- Exception while  setting SOCKS " + e);
 		}
 
-			businessEntityDao = new BusinessEntityDao();
+//			businessEntityDao = new BusinessEntityDao();
 			try {
 				logger.info("[fetchBusinessEntityDtFrTransporterFlag] : INFO- Connection to DB successful");
 
@@ -147,7 +150,7 @@ public class BusinessEntityService implements BusinessEntityLocal {
 		logger.info("[fetchBusinessEntityDtFrPurchaserFlag] : INFO- Service Started");
 		UIResponseDto uiResponseDto = new UIResponseDto();
 		ResponseMessage responseMessage = new ResponseMessage();
-		BusinessEntityDao businessEntityDao = null;
+//		BusinessEntityDao businessEntityDao = null;
 
 		try {
 			DowntimeServicesUtil.setupSOCKS();
@@ -155,7 +158,7 @@ public class BusinessEntityService implements BusinessEntityLocal {
 			logger.error("[fetchDataFromDispositionCodeTb] : ERROR- Exception while setting SOCKS " + e);
 		}
 
-			businessEntityDao = new BusinessEntityDao();
+//			businessEntityDao = new BusinessEntityDao();
 			try {
 				logger.info("[fetchBusinessEntityDtFrPurchaserFlag] : INFO- Connection to DB successful");
 
