@@ -17,6 +17,8 @@ import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import org.springframework.orm.hibernate4.HibernateTransactionManager;
 import org.springframework.orm.hibernate4.LocalSessionFactoryBean;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
+
+import com.murphy.appdownload.util.DowntimeServicesUtil;
 /**
  * @author Amit dey
  *
@@ -36,11 +38,11 @@ public class HibernateConfiguration {
 
 	@Bean(name = "sessionFactoryProcount")
 	public LocalSessionFactoryBean sessionFactoryProcount() {
-//		try {
-//			DowntimeServicesUtil.setupSOCKS();
-//		} catch (Exception e) {
-//			System.err.println("Exception while setting up Socks : "+e.getMessage());
-//		}
+		try {
+			DowntimeServicesUtil.setupSOCKS();
+		} catch (Exception e) {
+			System.err.println("Exception while setting up Socks : "+e.getMessage());
+		}
 		LocalSessionFactoryBean sessionFactoryProcount = new LocalSessionFactoryBean();
 		sessionFactoryProcount.setDataSource(dataSource());
 		sessionFactoryProcount.setPackagesToScan(new String[] { "com.murphy" });

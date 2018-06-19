@@ -45,9 +45,8 @@ public class MeterDao extends BaseDao<BaseDo, BaseDto>{
 				meterList = new ArrayList<>();
 				for (Object[] obj : resultList) {
 					MeterDto meterDto = new MeterDto();
-					meterDto.setMerrickID((int) obj[1]);
-					meterDto.setMeterName((String) obj[2]);
-					logger.error("[fetchMetersFromMeterTb] : INFO  - meterDto" + meterDto);
+					meterDto.setMerrickID((int) obj[0]);
+					meterDto.setMeterName((String) obj[1]);
 					meterList.add(meterDto);
 				}
 			}
@@ -55,7 +54,6 @@ public class MeterDao extends BaseDao<BaseDo, BaseDto>{
 
 			logger.error("[fetchMeters] : ERROR- Exception while fetching data from database " + e);
 			throw e;
-
 		} 
 		logger.error("[fetchMeters] : INFO  - meterList " + meterList);
 		return meterList;

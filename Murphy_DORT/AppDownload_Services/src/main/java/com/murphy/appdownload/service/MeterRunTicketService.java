@@ -15,7 +15,7 @@ import com.murphy.appdownload.service.interfaces.MeterRunTicketLocal;
 import com.murphy.appdownload.util.DortConstant;
 import com.murphy.appdownload.util.DowntimeServicesUtil;
 
-@Service
+@Service("MeterRunTicketService")
 public class MeterRunTicketService implements MeterRunTicketLocal {
 
 	private static final Logger logger = LoggerFactory.getLogger(MeterRunTicketService.class);
@@ -28,7 +28,7 @@ public class MeterRunTicketService implements MeterRunTicketLocal {
 		logger.info("[insertRecordinDB] : INFO- Service Started");
 		UIResponseDto uiResponseDto = new UIResponseDto();
 		ResponseMessage responseMessage = new ResponseMessage();
-//		MeterRunTicketDao meterRunTicketDao = null;
+
 		if (meterRunTicketDto != null && meterRunTicketDto.getMerrickId() != null) {
 			try {
 				DowntimeServicesUtil.setupSOCKS();
@@ -36,7 +36,6 @@ public class MeterRunTicketService implements MeterRunTicketLocal {
 				logger.error("[fetchDataFromDispositionCodeTb] : ERROR- Exception while setting SOCKS " + e);
 			}
 
-//				meterRunTicketDao = new MeterRunTicketDao();
 				try {
 					logger.info("[insertRecordinDB] : INFO- Connection to DB successful");
 

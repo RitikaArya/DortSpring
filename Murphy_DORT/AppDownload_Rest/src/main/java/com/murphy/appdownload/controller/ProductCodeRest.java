@@ -13,7 +13,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.murphy.appdownload.dto.UIRequestDto;
 import com.murphy.appdownload.dto.UIResponseDto;
-import com.murphy.appdownload.service.ProductCodeService;
 import com.murphy.appdownload.service.interfaces.ProductCodeLocal;
 
 @RestController
@@ -30,7 +29,6 @@ public class ProductCodeRest {
 	@RequestMapping(value = "/getProduct", method = RequestMethod.POST)
 	public UIResponseDto fetchDataFromProductCodeTb(@RequestBody UIRequestDto uiRequestDto) {
 		logger.error("[fetchDataFromProductCodeTb] :INFO uiRequestDto" +  uiRequestDto);
-		productCodeLocal = new ProductCodeService();
 		return productCodeLocal.fetchDataFromProductCodeTb(uiRequestDto);
 	}
 }

@@ -13,7 +13,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.murphy.appdownload.dto.UIRequestDto;
 import com.murphy.appdownload.dto.UIResponseDto;
-import com.murphy.appdownload.service.DispositionCodeService;
 import com.murphy.appdownload.service.interfaces.DispositionCodeLocal;
 
 @RestController
@@ -29,8 +28,7 @@ public class DispositionCodeRest {
 	
 	@RequestMapping(value = "/getDisposition", method = RequestMethod.POST)
 	public UIResponseDto fetchDataFromDispositionCodeTb(@RequestBody UIRequestDto uiRequestDto) {
-		logger.info("[fetchDataFromDispositionCodeTb] : uiRequestDto" +  uiRequestDto);
-		dispositionCodeLocal = new DispositionCodeService();
+		logger.error("[fetchDataFromDispositionCodeTb] : uiRequestDto" +  uiRequestDto);
 		return dispositionCodeLocal.fetchDataFromDispositionCodeTb(uiRequestDto);
 	}
 

@@ -42,11 +42,11 @@ public class BusinessEntityDao extends BaseDao<BaseDo, BaseDto>{
 				businessEntityList = new ArrayList<>();
 				for (Object[] obj : resultList) {
 					BusinessEntityDto businessEntityDto = new BusinessEntityDto();
-					businessEntityDto.setMerrickID((int) obj[1]);
-					businessEntityDto.setCompanyName((String) obj[2]);
-					businessEntityDto.setHaulerFlag((int) obj[3]);
-					businessEntityDto.setTransporterFlag((int) obj[4]);
-					businessEntityDto.setPurchaserFlag((int) obj[5]);
+					businessEntityDto.setMerrickID((int) obj[0]);
+					businessEntityDto.setCompanyName((String) obj[1]);
+					businessEntityDto.setHaulerFlag((int) obj[2]);
+					businessEntityDto.setTransporterFlag((int) obj[3]);
+					businessEntityDto.setPurchaserFlag((int) obj[4]);
 					
 					logger.error("[BusinessEntityTb] : INFO  - businessEntityDto" + businessEntityDto);
 					businessEntityList.add(businessEntityDto);
@@ -76,7 +76,7 @@ public class BusinessEntityDao extends BaseDao<BaseDo, BaseDto>{
 				businessEntityList = new ArrayList<>();
 				for (Object[] obj : resultList) {
 					BusinessEntityDto businessEntityDto = new BusinessEntityDto();
-					businessEntityDto.setMerrickID((int) obj[1]);
+					businessEntityDto.setMerrickID((int) obj[0]);
 					businessEntityDto.setCompanyName((String) obj[1]);
 					logger.error("[fetchDataFromBusinessEntityTb] : INFO  - businessEntityDto" + businessEntityDto);
 					businessEntityList.add(businessEntityDto);
@@ -105,8 +105,8 @@ public class BusinessEntityDao extends BaseDao<BaseDo, BaseDto>{
 				businessEntityList = new ArrayList<>();
 				for (Object[] obj : resultList) {
 					BusinessEntityDto businessEntityDto = new BusinessEntityDto();
-					businessEntityDto.setMerrickID((int) obj[1]);
-					businessEntityDto.setCompanyName((String) obj[2]);
+					businessEntityDto.setMerrickID((int) obj[0]);
+					businessEntityDto.setCompanyName((String) obj[1]);
 					logger.error("[fetchBusinessEntityDtFrTransporterFlag] : INFO  - businessEntityDto" + businessEntityDto);
 					businessEntityList.add(businessEntityDto);
 				}
@@ -134,7 +134,7 @@ public class BusinessEntityDao extends BaseDao<BaseDo, BaseDto>{
 				businessEntityList = new ArrayList<>();
 				for (Object[] obj : resultList) {
 					BusinessEntityDto businessEntityDto = new BusinessEntityDto();
-					businessEntityDto.setMerrickID((int) obj[1]);
+					businessEntityDto.setMerrickID((int) obj[0]);
 					businessEntityDto.setCompanyName((String) obj[1]);
 					logger.error("[fetchBusinessEntityDtFrPurchaserFlag] : INFO  - businessEntityDto" + businessEntityDto);
 					businessEntityList.add(businessEntityDto);

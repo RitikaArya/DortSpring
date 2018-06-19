@@ -48,9 +48,9 @@ public class ProductCodeDao extends BaseDao<BaseDo, BaseDto>{
 				productCodeDtoList = new ArrayList<>();
 				for (Object[] obj : resultList) {
 					ProductCodeDto productCodeDto = new ProductCodeDto();
-					productCodeDto.setProductTypeID((int) obj[1]);
-					productCodeDto.setProductCodeShort((String) obj[2]);
-					productCodeDto.setMerrickID((int) obj[3]);
+					productCodeDto.setProductTypeID((int) obj[0]);
+					productCodeDto.setProductCodeShort((String) obj[1]);
+					productCodeDto.setMerrickID((int) obj[2]);
 					logger.error("[fetchDataFromProductCodeTb] : INFO  - productCodeDto" + productCodeDto);
 					productCodeDtoList.add(productCodeDto);
 				}

@@ -13,7 +13,7 @@ import com.murphy.appdownload.dto.UIResponseDto;
 import com.murphy.appdownload.service.interfaces.DispositionCodeLocal;
 import com.murphy.appdownload.util.DowntimeServicesUtil;
 
-@Service
+@Service("DispositionCodeService")
 public class DispositionCodeService implements DispositionCodeLocal {
 
 	private static final Logger logger = LoggerFactory.getLogger(DispositionCodeService.class);
@@ -26,7 +26,7 @@ public class DispositionCodeService implements DispositionCodeLocal {
 		logger.info("[fetchDataFromDispositionCodeTb] : INFO- Service Started");
 		UIResponseDto uiResponseDto = new UIResponseDto();
 		ResponseMessage responseMessage = new ResponseMessage();
-//		DispositionCodeDao dispositionCodeDao = null;
+
 		if (uiRequestDto != null && uiRequestDto.getMerrickIdList() != null && uiRequestDto.getMerrickIdList().size()>0) {
 			try {
 				DowntimeServicesUtil.setupSOCKS();
@@ -34,7 +34,6 @@ public class DispositionCodeService implements DispositionCodeLocal {
 				logger.error("[fetchDataFromDispositionCodeTb] : ERROR- Exception while setting SOCKS " + e);
 			}
 
-//				dispositionCodeDao = new DispositionCodeDao();
 				try {
 					logger.info("[fetchDataFromDispositionCodeTb] : INFO- Connection to DB successful");
 					

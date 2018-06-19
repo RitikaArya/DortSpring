@@ -47,9 +47,9 @@ public class DispositionCodeDao extends BaseDao<BaseDo, BaseDto>{
 				dispositionCodeDtoList = new ArrayList<>();
 				for (Object[] obj : resultList) {
 					DispositionCodeDto dispositionCodeDto = new DispositionCodeDto();
-					dispositionCodeDto.setProductTypeID((int) obj[1]);
+					dispositionCodeDto.setProductTypeID((int) obj[0]);
 					dispositionCodeDto.setDispositionCodeShort((String) obj[1]);
-					dispositionCodeDto.setMerrickID((int) obj[3]);
+					dispositionCodeDto.setMerrickID((int) obj[2]);
 					logger.error("[fetchDataFromDispositionCodeTb] : INFO  - dispositionCodeDto" + dispositionCodeDto);
 					dispositionCodeDtoList.add(dispositionCodeDto);
 				}

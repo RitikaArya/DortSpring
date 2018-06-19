@@ -22,7 +22,6 @@ public class MeterRest {
 
 	@RequestMapping(value = "/fetchMeters", method = RequestMethod.GET)
 	public UIResponseDto fetchMetersDt() {
-//		meterServiceLocal = new MeterService();
 		return meterServiceLocal.fetchMetersDt();
 	}
 	

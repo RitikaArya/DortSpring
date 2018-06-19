@@ -19,7 +19,7 @@ import com.murphy.appdownload.service.interfaces.DowntimeCaptureLocal;
 import com.murphy.appdownload.util.DowntimeConstant;
 import com.murphy.appdownload.util.DowntimeServicesUtil;
 
-@Service
+@Service("DowntimeCapture")
 public class DowntimeCapture implements DowntimeCaptureLocal {
 
 	private static final Logger logger = LoggerFactory.getLogger(DowntimeCapture.class);
@@ -36,14 +36,12 @@ public class DowntimeCapture implements DowntimeCaptureLocal {
 		ResponseMessage responseMessage = new ResponseMessage();
 
 		if (originalDateEntered != null && uwiId != null && uwiId.length() > 0) {
-//			DowntimeCaptureDao downtimeCaptureDao = null;
 
 			try {
 				DowntimeServicesUtil.setupSOCKS();
 			} catch (Exception e) {
 				logger.error("[insertOrUpdateCounts] : ERROR- Exception while setting SOCKS " + e);
 			}
-//				downtimeCaptureDao = new DowntimeCaptureDao();
 				try {
 					logger.info("[insertOrUpdateCounts] : INFO- Connection to DB successful");
 
@@ -100,7 +98,7 @@ public class DowntimeCapture implements DowntimeCaptureLocal {
 		ResponseMessage responseMessage = new ResponseMessage();
 		if (downtimeCaptureDto != null && downtimeCaptureDto.getOriginalDateEntered() != null && downtimeCaptureDto.getUwiId() != null
 				&& downtimeCaptureDto.getUwiId().length() > 0) {
-//			DowntimeCaptureDao downtimeCaptureDao = null;
+
 			DowntimeCaptureDo downtimeCaptureDoUI = null;
 
 			try {
@@ -108,7 +106,6 @@ public class DowntimeCapture implements DowntimeCaptureLocal {
 			} catch (Exception e) {
 				logger.error("[insertOrUpdateCounts] : ERROR- Exception while setting SOCKS " + e);
 			}
-//				downtimeCaptureDao = new DowntimeCaptureDao();
 				try {
 					logger.info("[insertOrUpdateCounts] : INFO- Connection to DB successful");
 

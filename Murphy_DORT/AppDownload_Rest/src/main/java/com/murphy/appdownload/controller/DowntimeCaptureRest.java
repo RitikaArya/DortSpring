@@ -17,7 +17,6 @@ import org.springframework.web.bind.annotation.RestController;
 import com.murphy.appdownload.dto.DowntimeCaptureDto;
 import com.murphy.appdownload.dto.DowntimeCaptureFetchResponseDto;
 import com.murphy.appdownload.dto.ResponseMessage;
-import com.murphy.appdownload.service.DowntimeCapture;
 import com.murphy.appdownload.service.interfaces.DowntimeCaptureLocal;
 
 @RestController
@@ -31,13 +30,11 @@ public class DowntimeCaptureRest {
 	
 	@RequestMapping(value = "/updateDowntimeCapture", method = RequestMethod.POST)
 	public ResponseMessage createTaskFromTemplate(@RequestBody DowntimeCaptureDto downtimeCaptureDto) {
-		downtimeCaptureLocal = new DowntimeCapture();
 		return downtimeCaptureLocal.insertOrUpdateCounts(downtimeCaptureDto);
 	}
 
 	@RequestMapping(value = "/getDowntimeCapture", method = RequestMethod.GET)
 	public DowntimeCaptureFetchResponseDto fetchDowntimeCapture(@RequestParam("originalDateEntered") String originalDateEntered, @RequestParam("uwiId") String uwiId) {
-		downtimeCaptureLocal = new DowntimeCapture();
 		DateFormat df = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss");
 		Date originalDate = null;
 		DowntimeCaptureFetchResponseDto responseDto = null;

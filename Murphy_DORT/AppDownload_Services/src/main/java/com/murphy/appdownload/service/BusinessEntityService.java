@@ -12,7 +12,7 @@ import com.murphy.appdownload.dto.UIResponseDto;
 import com.murphy.appdownload.service.interfaces.BusinessEntityLocal;
 import com.murphy.appdownload.util.DowntimeServicesUtil;
 
-@Service
+@Service("BusinessEntityService")
 public class BusinessEntityService implements BusinessEntityLocal {
 
 	private static final Logger logger = LoggerFactory.getLogger(BusinessEntityService.class);
@@ -22,11 +22,10 @@ public class BusinessEntityService implements BusinessEntityLocal {
 	
 	@Override
 	public UIResponseDto fetchBusinessEntityDt() {
-		// TODO Auto-generated method stub
+		
 		logger.info("[fetchBusinessEntityDt] : INFO- Service Started");
 		UIResponseDto uiResponseDto = new UIResponseDto();
 		ResponseMessage responseMessage = new ResponseMessage();
-//		BusinessEntityDao businessEntityDao = null;
 
 		try {
 			DowntimeServicesUtil.setupSOCKS();
@@ -34,7 +33,6 @@ public class BusinessEntityService implements BusinessEntityLocal {
 			logger.error("[fetchDataFromDispositionCodeTb] : ERROR- Exception while setting SOCKS " + e);
 		}
 
-//			businessEntityDao = new BusinessEntityDao();
 			try {
 				logger.info("[fetchBusinessEntityDt] : INFO- Connection to DB successful");
 
@@ -67,7 +65,6 @@ public class BusinessEntityService implements BusinessEntityLocal {
 		logger.info("[fetchBusinessEntityDtFrHaulerFlag] : INFO- Service Started");
 		UIResponseDto uiResponseDto = new UIResponseDto();
 		ResponseMessage responseMessage = new ResponseMessage();
-//		BusinessEntityDao businessEntityDao = null;
 
 		try {
 			DowntimeServicesUtil.setupSOCKS();
@@ -75,7 +72,6 @@ public class BusinessEntityService implements BusinessEntityLocal {
 			logger.error("[fetchDataFromDispositionCodeTb] : ERROR- Exception while setting SOCKS " + e);
 		}
 
-//			businessEntityDao = new BusinessEntityDao();
 			try {
 				logger.info("[fetchBusinessEntityDtFrHaulerFlag] : INFO- Connection to DB successful");
 
@@ -108,7 +104,6 @@ public class BusinessEntityService implements BusinessEntityLocal {
 		logger.info("[fetchBusinessEntityDtFrTransporterFlag] : INFO- Service Started");
 		UIResponseDto uiResponseDto = new UIResponseDto();
 		ResponseMessage responseMessage = new ResponseMessage();
-//		BusinessEntityDao businessEntityDao = null;
 
 		try {
 			DowntimeServicesUtil.setupSOCKS();
@@ -116,7 +111,6 @@ public class BusinessEntityService implements BusinessEntityLocal {
 			logger.error("[fetchDataFromDispositionCodeTb] : ERROR- Exception while  setting SOCKS " + e);
 		}
 
-//			businessEntityDao = new BusinessEntityDao();
 			try {
 				logger.info("[fetchBusinessEntityDtFrTransporterFlag] : INFO- Connection to DB successful");
 
@@ -150,7 +144,6 @@ public class BusinessEntityService implements BusinessEntityLocal {
 		logger.info("[fetchBusinessEntityDtFrPurchaserFlag] : INFO- Service Started");
 		UIResponseDto uiResponseDto = new UIResponseDto();
 		ResponseMessage responseMessage = new ResponseMessage();
-//		BusinessEntityDao businessEntityDao = null;
 
 		try {
 			DowntimeServicesUtil.setupSOCKS();
@@ -158,7 +151,6 @@ public class BusinessEntityService implements BusinessEntityLocal {
 			logger.error("[fetchDataFromDispositionCodeTb] : ERROR- Exception while setting SOCKS " + e);
 		}
 
-//			businessEntityDao = new BusinessEntityDao();
 			try {
 				logger.info("[fetchBusinessEntityDtFrPurchaserFlag] : INFO- Connection to DB successful");
 

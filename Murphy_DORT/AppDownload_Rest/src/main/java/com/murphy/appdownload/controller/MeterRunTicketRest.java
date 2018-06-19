@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.murphy.appdownload.dto.MeterRunTicketDto;
 import com.murphy.appdownload.dto.UIResponseDto;
-import com.murphy.appdownload.service.MeterRunTicketService;
 import com.murphy.appdownload.service.interfaces.MeterRunTicketLocal;
 
 @RestController
@@ -26,7 +25,6 @@ public class MeterRunTicketRest {
 	@RequestMapping(value = "/create", method = RequestMethod.POST)
 	public UIResponseDto createTaskFromTemplate(@RequestBody MeterRunTicketDto meterRunTicketDto) {
 		
-		meterRunTicketLocal = new MeterRunTicketService();
 		return meterRunTicketLocal.insertRecordinDB(meterRunTicketDto);
 	}
 

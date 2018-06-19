@@ -1,4 +1,4 @@
-package com.murphy.appdownload.controller;
+/*package com.murphy.appdownload.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.ComponentScan;
@@ -36,3 +36,4 @@ public class AppFileRestController {
 		return fileLocal.getFileVersion(fileType, application);
 	}
 }
+*/

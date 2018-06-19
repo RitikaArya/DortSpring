@@ -13,7 +13,7 @@ import com.murphy.appdownload.dto.UIRequestDto;
 import com.murphy.appdownload.dto.UIResponseDto;
 import com.murphy.appdownload.util.DowntimeServicesUtil;
 
-@Service
+@Service("ProductCodeService")
 public class ProductCodeService implements ProductCodeLocal {
 
 	private static final Logger logger = LoggerFactory.getLogger(ProductCodeService.class);
